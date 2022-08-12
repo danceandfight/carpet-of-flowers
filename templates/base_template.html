@@ -1,0 +1,53 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Carpet of Flowers</title>
+        <link href="{% static 'cof-main.css' %}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="cof-header">
+                <a href="/" class="logo-link" alt="homepage">
+                    <img src="media/cof-logo.svg" class="logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="/news" class="{% block nav_news %}{% endblock %}"><b>News</b></a></li>
+                    <li><a href="/boardgames" class="{% block nav_boardgames %}{% endblock %}"><b>Boardgames</b></a></li>
+                    <li><a href="/videogames" class="{% block nav_videogames %}{% endblock %}"><b>Videogames</b></a></li>
+                    <li>
+                        <form action="/search" method="GET">
+                            <input type="text" placeholder="SEARCH" name="q">
+                            <input type="submit">
+                        </form>
+                    </li>
+                    <li>
+                        {% if request.user.username %}
+                        <p>You are: {{request.user.username}}</p>
+                        {% else %}
+                        <p><a href="/register" class="registration">Registartion opened!</a></p>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+
+                
+            {% block content %}
+            {% endblock %}
+            <div class="footer">
+                <p>All rights on the reviewed games and images are reserved for their respective owners.</p>
+                <p>You may copy or translate any materials from this site mentioning us if it is served for a non-profit reasons. Otherwise contact us via e-mail.</p>
+            </div>
+            
+        </div>
+    </body>
+</html>

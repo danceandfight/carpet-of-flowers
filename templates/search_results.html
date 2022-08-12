@@ -1,0 +1,21 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<div class="search-results">
+    <h2 class="search-results">Search results for "<span class="highlighter">{{ query|upper }}</span>":</h2>
+</div>
+{% for article in articles %}
+<div class="card">
+    <a href="/{{ article.slug }}" class="card-link" alt="">
+        <img src="{{ article.image.url }}" class="card-picture" alt="some-article">
+    </a>
+    <div class="text-part">
+        <a href="/{{ article.slug }}" class="card-link" alt="">
+            <h3 class="article-header">{{ article.title }}</h3>
+        </a>
+        <p class="preview">{{ article.snippet|safe }}</p>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}

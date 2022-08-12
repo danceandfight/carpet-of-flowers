@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*font-family: 'DM Serif Display', serif;*/
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+    margin-right: 220px;
+    margin-left: 220px;
+    gap: 20px;
+}
+.cof-header {
+    margin: 0;
+    padding: 0;
+    grid-column: 1 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    margin: 0;
+    /*font-family: 'Monoton', cursive;
+    font-size: 76px;
+    
+    text-align: justify;*/
+    width: 100%;
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+/*.cof-menu {
+    grid-column: 1 / 4;
+    border: 1px solid rosybrown;
+
+}*/
+
+.cof-menu a {
+    
+    
+}
+
+.nav-menu {
+    margin: 0;
+    margin-bottom: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu a {
+    border-bottom: 2px solid black;
+    text-transform: uppercase;
+    color: black;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+.nav-menu li {
+    
+    padding: 10px 5px 5px 5px;
+    /*font-family: 'DM Serif Display', 'Monoton', cursive;*/
+    /*font-family: 'DM Serif Display', serif;*/
+    /*font-family: 'Monoton', cursive;*/
+}
+
+.nav-menu input {
+    /*font-family: 'DM Serif Display', 'Monoton', cursive;*/
+    /*font-family: 'DM Serif Display', serif;*/
+    font-family: 'Playfair Display', serif;
+    border: 2px solid black;
+    font-size: 15px;
+    margin-right: 40px;
+}
+
+
+.nav-menu input:hover, .nav-menu input:focus {
+    outline: none !important;
+    /*box-shadow: 0 0 5px #002554;*/
+    border: 2px solid darkred;
+    border-radius: none;
+}
+
+.nav-menu a:hover, .nave-menu input:hover {
+    border-bottom: 2px solid darkred;
+    color: darkred;
+}
+
+
+.featured-article {
+    grid-column: 1 / 4;
+    display: flex;
+    height: 300px;
+    border: 4px double darkred;
+    box-sizing: border-box;
+}
+
+.featured-article:hover {
+}
+
+.featured-image {
+    height: auto;
+
+}
+
+.featured-title{
+}
+
+.featured-preview {
+}
+
+.featured-article-preview {
+    flex-grow: 2;
+    margin: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    height: auto;
+    max-width: 100%;
+    max-height: auto;
+    border-bottom: 3px solid white;
+}
+
+.card:hover {
+    border-bottom: 3px solid white;
+}
+
+.card .card-picture {
+    
+    /*max-width: 300px;
+    min-width: 200px;*/
+}
+
+
+.footer {
+    grid-column: 1 / 4;
+}
