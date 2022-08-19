@@ -14,13 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
-#from .views import homepage
-#from .views import article
-#from .views import register
-#from .views import news_page
-#from .views import boardgames_page
-#from .views import videogames_page
-#from .views import search_results
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -34,16 +27,6 @@ urlpatterns = [
     path('videogames', views.VideogamesViews.as_view(), name='videogames'),
     path('search', views.search_results, name="search"),
     path('register', views.register, name='register'),
-    path('register2', views.register2, name='register2'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('<slug>', views.article),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-#path('', homepage),
-#path('news', news_page),
-#path('boardgames', boardgames_page),
-#path('videogames', videogames_page),
-#path('search', views.SearchresultView.as_view(), name='search'),
-#path('register', views.register),
-#path('<slug>', views.ArticleView.as_view()),
-
