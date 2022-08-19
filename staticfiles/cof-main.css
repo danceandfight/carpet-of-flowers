@@ -3,7 +3,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    /*font-family: 'DM Serif Display', serif;*/
     font-family: 'Playfair Display', serif;
 }
 
@@ -14,7 +13,6 @@ body {
     margin-left: 220px;
     gap: 20px;
     min-height: 100%;
-    /*grid-template-rows: auto 1fr auto;*/
 }
 .cof-header {
     margin: 0;
@@ -26,23 +24,9 @@ body {
 
 .logo {
     margin: 0;
-    /*font-family: 'Monoton', cursive;
-    font-size: 76px;
-    
-    text-align: justify;*/
     width: 100%;
     align-self: center;
     margin-bottom: 15px;
-}
-
-/*.cof-menu {
-    grid-column: 1 / 4;
-    border: 1px solid rosybrown;
-
-}*/
-
-.cof-menu a {
-    
 }
 
 .nav-menu {
@@ -65,14 +49,9 @@ body {
 .nav-menu li {
     margin-right: 40px;
     padding: 10px 5px 5px 5px;
-    /*font-family: 'DM Serif Display', 'Monoton', cursive;*/
-    /*font-family: 'DM Serif Display', serif;*/
-    /*font-family: 'Monoton', cursive;*/
 }
 
-/*.nav-menu*/ input, textarea {
-    /*font-family: 'DM Serif Display', 'Monoton', cursive;*/
-    /*font-family: 'DM Serif Display', serif;*/
+input, textarea {
     font-family: 'Playfair Display', serif;
     border: 2px solid black;
     font-size: 15px;
@@ -131,10 +110,6 @@ textarea:hover, textarea:focus {
 .card {
     display: flex;
     flex-direction: column;
-    /*justify-content: stretch;
-    height: auto;
-    max-width: 100%;
-    max-height: auto;*/
     border-bottom: 3px solid white;
 }
 
@@ -164,6 +139,7 @@ textarea:hover, textarea:focus {
 
 .footer {
     grid-column: 1 / 4;
+    font-size: 12px;
 }
 
 .article-page {
