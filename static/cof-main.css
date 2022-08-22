@@ -153,8 +153,8 @@ textarea:hover, textarea:focus {
     font-size: 36px;
 }
 
-#id_form {
-    width: 100%;
+textarea#id_body {
+    width: 80% !important;
 }
 
 .search-results {

@@ -18,6 +18,7 @@
         </div>
     </div>
     {% endfor %}
+    {% if request.user.username %}
     <br>
     <form method="post" action="{{article.slug}}" class="comment-form">
         {% csrf_token %}
@@ -25,5 +26,8 @@
         <!--<textarea class="add-comment" rows=4 placeholder="Say something..."></textarea>--><br>
         <input type="submit">
     </form>
+    {% else %}
+    <p><a href="/register" class="registration">Register to leave a comment!</a></p>
+    {% endif %}
 </div>
 {% endblock %}
