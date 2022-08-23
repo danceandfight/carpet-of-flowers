@@ -25,8 +25,9 @@ urlpatterns = [
     path('news', views.NewsView.as_view(), name='news'),
     path('boardgames', views.BoardgamesViews.as_view(), name='boardgames'),
     path('videogames', views.VideogamesViews.as_view(), name='videogames'),
-    path('search', views.search_results, name="search"),
+    path('search', views.search_results, name='search'),
     path('register', views.register, name='register'),
+    path('login', views.UserLogin.as_view(), name='login'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('<slug>', views.article),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -2,14 +2,16 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView
 from django.db.models import Prefetch
 from django.db.models import fields
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django import forms
-from .forms import CommentForm 
+from .forms import CommentForm, LoginForm 
 from .models import Article, Comment
 
+from django.http import HttpResponse
 
 class HomepageView(generic.ListView):
     template_name = '../templates/homepage.html'
@@ -48,12 +50,14 @@ class NewsView(generic.ListView):
     def get_queryset(self):
         return Article.objects.filter(category__name__icontains='news').order_by('-date').prefetch_related('category')
 
+
 class BoardgamesViews(generic.ListView):
     template_name = '../templates/boardgames.html'
     context_object_name = 'articles'
 
     def get_queryset(self):
         return Article.objects.filter(category__name__icontains='boardgames').order_by('-date').prefetch_related('category')
+
 
 class VideogamesViews(generic.ListView):
     template_name = '../templates/videogames.html'
@@ -106,3 +110,6 @@ def register(request):
 
     return render(request, 'registration.html', context)
 
+
+class UserLogin(LoginView):
+    template_name = '../templates/login.html'

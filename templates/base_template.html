@@ -34,7 +34,8 @@
                         {% if request.user.username %}
                         <p>You are: {{request.user.username}}</p>
                         {% else %}
-                        <p><a href="/register" class="registration">Registartion opened!</a></p>
+                        <p><a href="/register" class="registration">Sign in</a>
+                        <a href="/login" class="login">Log in</a></p>
                         {% endif %}
                     </li>
                 </ul>
