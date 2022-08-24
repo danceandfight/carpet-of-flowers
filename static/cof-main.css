@@ -51,6 +51,21 @@ body {
     padding: 10px 5px 5px 5px;
 }
 
+.user-menu {
+    display: inline-block;
+}
+
+.username {
+    position: relative;
+}
+
+.logout {
+    display: block;
+    position: absolute;
+    width: 70px;
+    top: 70px;
+}
+
 input, textarea {
     font-family: 'Playfair Display', serif;
     border: 2px solid black;

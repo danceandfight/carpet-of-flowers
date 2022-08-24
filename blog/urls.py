@@ -28,6 +28,7 @@ urlpatterns = [
     path('search', views.search_results, name='search'),
     path('register', views.register, name='register'),
     path('login', views.UserLogin.as_view(), name='login'),
+    path('logout', views.logout_view, name='logout'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('<slug>', views.article),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

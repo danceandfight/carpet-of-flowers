@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -113,3 +113,7 @@ def register(request):
 
 class UserLogin(LoginView):
     template_name = '../templates/login.html'
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
