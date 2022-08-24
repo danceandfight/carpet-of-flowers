@@ -10,10 +10,11 @@
 - Install requirements with the command `pip install -r requirements.txt`
 - Create database with `python3 manage.py migrate`
 - Create admin-user with `python3 manage.py createsuperuser`
-- Run test-server `python3 manage.py reunserver`
+- Run `python manage.py collectstatic` command
+- Run test-server `python3 manage.py runserver`
 
 
 ### How to use
 
-Site will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-Admin will be available with [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+- Site will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+- Admin will be available at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
