@@ -39,7 +39,7 @@ class Article(models.Model):
         return self.title
 
 class Comment(models.Model):
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    username = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
     article = models.ForeignKey(Article, related_name='comments', on_delete=models.CASCADE)
     body = models.TextField('Текст комментария')
 
