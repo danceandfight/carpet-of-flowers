@@ -1,0 +1,15 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<div class="article-page">
+    {{ user.username }}
+    {% for comment in user.comments.all %}
+    <div class="comment-card">
+        <div class="comment-card-text">
+            <h3 class="username">{{ comment.article.title }}</h3>
+            <p class="comment-body">{{ comment.body }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

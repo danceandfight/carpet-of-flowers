@@ -21,6 +21,12 @@ class HomepageView(generic.ListView):
         return Article.objects.all().order_by('-date').prefetch_related('category')
 
 
+class UserView(generic.DetailView):
+    template_name = '../templates/profile.html'
+    model = User
+    context_object_name = 'user'
+
+
 def article(request, slug):
     comments_and_users = Comment.objects.filter(article__slug=slug).select_related('username')
     query = Article.objects.prefetch_related(Prefetch('comments', queryset=comments_and_users))
