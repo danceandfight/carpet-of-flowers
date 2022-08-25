@@ -18,7 +18,7 @@
         <div class="container">
             <div class="cof-header">
                 <a href="/" class="logo-link" alt="homepage">
-                    <img src="media/cof-logo.svg" class="logo">
+                    <img src="../media/cof-logo.svg" class="logo">
                 </a>
                 <ul class="nav-menu">
                     <li><a href="/news" class="{% block nav_news %}{% endblock %}"><b>News</b></a></li>
@@ -32,7 +32,7 @@
                     </li>
                     <li class="user-menu">
                         {% if request.user.username %}
-                        <p class="username">{{request.user.username}}</p>
+                        <p class="username"><a href="/profile/{{user.id}}">{{request.user.username}}</a></p>
                         <p class="logout"><a href="/logout" class="logout">Log out</a></p>
                         {% else %}
                         <p><a href="/register" class="registration">Sign in</a>
