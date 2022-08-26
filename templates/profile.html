@@ -1,12 +1,14 @@
 {% extends 'base_template.html' %}
 
+{% block profile %}hidden{% endblock %}
 {% block content %}
 <div class="article-page">
-    {{ user.username }}
+    <p>You are <span class="highlighter"><b>{{ user.username }}</b></span> | <a href="/logout">Log out</a></p>
+    <h3>Your comments:</h3>
     {% for comment in user.comments.all %}
     <div class="comment-card">
         <div class="comment-card-text">
-            <h3 class="username">{{ comment.article.title }}</h3>
+            <h3 class="username">{{ comment.article.title }} | {{ comment.date }}</h3>
             <p class="comment-body">{{ comment.body }}</p>
         </div>
     </div>

@@ -30,10 +30,9 @@
                             <input type="submit">
                         </form>
                     </li>
-                    <li class="user-menu">
+                    <li class="user-menu {% block profile %}{% endblock %}">
                         {% if request.user.username %}
                         <p class="username"><a href="/profile/{{user.id}}">{{request.user.username}}</a></p>
-                        <p class="logout"><a href="/logout" class="logout">Log out</a></p>
                         {% else %}
                         <p><a href="/register" class="registration">Sign in</a>
                         <a href="/login" class="login">Log in</a></p>

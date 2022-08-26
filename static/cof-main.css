@@ -180,6 +180,10 @@ textarea#id_body {
     color: darkred;
 }
 
+.hidden {
+    display: None;
+}
+
 p .helptext {
     padding-left: 10px;
 }
