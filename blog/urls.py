@@ -26,7 +26,7 @@ urlpatterns = [
     path('boardgames', views.BoardgamesViews.as_view(), name='boardgames'),
     path('videogames', views.VideogamesViews.as_view(), name='videogames'),
     path('search', views.search_results, name='search'),
-    path('profile/<pk>', views.UserView.as_view(), name='profile'),
+    path('profile/<id>', views.profile),
     path('register', views.register, name='register'),
     path('login', views.UserLogin.as_view(), name='login'),
     path('logout', views.logout_view, name='logout'),
