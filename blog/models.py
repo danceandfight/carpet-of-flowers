@@ -1,3 +1,4 @@
+from datetime import datetime 
 from django.db import models
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
@@ -42,6 +43,7 @@ class Comment(models.Model):
     username = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
     article = models.ForeignKey(Article, related_name='comments', on_delete=models.CASCADE)
     body = models.TextField('Текст комментария')
+    date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
         return f'{self.article.title} - {self.username} says: {self.body[:20]}...'
