@@ -101,6 +101,9 @@ textarea:hover, textarea:focus {
     box-sizing: border-box;
     text-decoration: none;
     color: black;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 .featured-link {
@@ -112,15 +115,25 @@ textarea:hover, textarea:focus {
     text-decoration: underline;
 }
 
+article p:last-child {
+    color: white;
+    background-color: darkred !important;
+    padding: 5px;
+}
+
+article .featured-preview {
+    
+    background-color: darkred !important;
+}
+
 .featured-image {
     height: auto;
-
 }
 
 .featured-article-preview {
     flex-grow: 2;
-    margin: 20px;
-}
+    margin: 20px
+    }
 
 .card {
     display: flex;
