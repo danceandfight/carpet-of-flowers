@@ -18,3 +18,8 @@
 
 - Site will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 - Admin will be available at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+
+### Blog's test version
+
+You might check the actual version of the blog at:
+[http://www.carp-of-flows.tk//](http://www.carp-of-flows.tk/)
