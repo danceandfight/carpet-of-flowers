@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Category(models.Model):
-    name = models.CharField('', max_length=30)
+    name = models.CharField('Категория', max_length=30)
 
     class Meta:
         verbose_name = 'Категория'
@@ -20,7 +20,7 @@ class Article(models.Model):
     body = HTMLField('Текст статьи')
     slug = models.SlugField('Название в виде url', max_length=200)
     author = models.CharField('Автор', max_length=50)
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField('Дата публикации', auto_now_add=True)
     category = models.ForeignKey(
         Category,  
         related_name='articles',
@@ -29,6 +29,10 @@ class Article(models.Model):
         verbose_name='Категория'
         )
     image = models.ImageField('Картинка', default='lea-232-black-lotus.jpeg')
+
+    class Meta:
+        verbose_name = 'Статья'
+        verbose_name_plural = 'Статьи'
 
     def snippet(self):
         return self.body[:200] + '...'
@@ -43,7 +47,11 @@ class Comment(models.Model):
     username = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
     article = models.ForeignKey(Article, related_name='comments', on_delete=models.CASCADE)
     body = models.TextField('Текст комментария')
-    date = models.DateTimeField(default=datetime.now, blank=True)
+    date = models.DateTimeField('Дата публикации', default=datetime.now, blank=True)
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
 
     def __str__(self):
         return f'{self.article.title} - {self.username} says: {self.body[:20]}...'
