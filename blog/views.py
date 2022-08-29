@@ -22,7 +22,7 @@ class HomepageView(generic.ListView):
 
 
 def profile(request, id):
-    comments_and_articles = Comment.objects.filter(username_id=id).select_related('article')
+    comments_and_articles = Comment.objects.filter(username_id=id).order_by('-date').select_related('article')
     query = User.objects.prefetch_related(Prefetch('comments', queryset=comments_and_articles))
     user = get_object_or_404(query, id=id)
     
