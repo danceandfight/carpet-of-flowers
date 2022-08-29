@@ -34,7 +34,8 @@
                         {% if request.user.username %}
                         <p class="username"><a href="/profile/{{user.id}}">{{request.user.username}}</a></p>
                         {% else %}
-                        <p><a href="/register" class="registration">Sign in</a>
+                        <p><a href="/register" class="registration">Sign up</a>
+                        <span>   </span>
                         <a href="/login" class="login">Log in</a></p>
                         {% endif %}
                     </li>

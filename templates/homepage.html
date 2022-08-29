@@ -1,13 +1,12 @@
 {% extends 'base_template.html' %}
 
 {% block content %}
-<a href="/{% with articles.0 as article%}{{ article.slug }}" class="featured-article">
-                    <article class="featured-article-preview">
-                        <h2 class="featured-title">{{ article.title }}</h2>
-                        <p class="featured-preview">{{ article.featured_snippet|safe }}</p>
-                    </article>
-                    <img src="{{ article.image.url }}">
-                </a>
+<a href="/{% with articles.0 as article%}{{ article.slug }}" class="featured-article" style="background-image: url('{{ article.image.url }}')">
+    <article class="featured-article-preview">
+        <h2 class="featured-title">{{ article.title }}</h2>
+        <p class="featured-preview">{{ article.featured_snippet|safe }}</p>
+    </article>
+</a>
 {% endwith %}
 {% for article in articles|slice:"1:" %}
 <div class="card">
